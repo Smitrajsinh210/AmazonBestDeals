@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Marketing Website - Jartims</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        #navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #navbar .company-name {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        #navbar ul li {
+            margin: 0 15px;
+        }
+
+        #navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        #navbar ul li a:hover {
+            color: #ddd;
+        }
+
+        #search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        #search-bar input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        #search-bar button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #search-bar button:hover {
+            background-color: #218838;
+        }
+
+        #category-filter {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        #category-filter select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        #product-list li {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            text-align: center;
+            flex: 1 1 calc(33.333% - 40px);
+        }
+
+        #product-list img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        #product-list h2 {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        #product-list p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        #product-list a {
+            text-decoration: none;
+        }
+
+        #product-list button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #product-list button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer #social-media a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer #social-media a:hover {
+            color: #ddd;
+        }
+
+        footer p {
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #product-list li {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            #product-list li {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="company-name">Jartims</div>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contect.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Search Bar -->
+    <div id="search-bar">
+        <input type="text" id="search-input" placeholder="Search products...">
+        <button onclick="searchProducts()">Search</button>
+    </div>
+
+    <!-- Category Filter -->
+    <div id="category-filter">
+        <select id="category-select" onchange="filterProducts()">
+            <option value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="books">Books</option>
+            <option value="home">Home & Kitchen</option>
+        </select>
+    </div>
+
+    <!-- Product List -->
+    <ul id="product-list">
+        <!-- Products will be dynamically inserted here by JavaScript -->
+    </ul>
+
+    <!-- Footer -->
+    <footer>
+        <div id="social-media">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+            <a href="https://www.twitter.com" target="_blank">Twitter</a> |
+            <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+        <p>&copy; 2024 Jartims</p>
+    </footer>
+
+    <script>
+        const products = [
+            { id: 1, name: 'Wireless Headphones', description: 'High quality wireless headphones.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/710dy4BFjLL._SX522_.jpg', buyLink: 'https://www.amazon.in/Boult-Wireless-Earbuds-Playtime-Charging/dp/B0D3R1JQ7D?psc=1&linkCode=ll1&tag=smitrajsinh21-21&linkId=a8d5782cdc104b7a693e90817f6b4333&language=en_IN&ref_=as_li_ss_tl' },
+            { id: 2, name: 'Leather Jacket', description: 'Stylish leather jacket for men.', category: 'clothing', image: 'https://f.media-amazon.com/images/I/61hz9cK6gnL._SX679_.jpg', buyLink: 'https://amzn.to/4e1qYki' },
+            { id: 3, name: 'JavaScript Book', description: 'Learn JavaScript programming with this book.', category: 'books', image: 'https://f.media-amazon.com/images/I/41pSmCOLxKL._SX342_SY445_.jpg', buyLink: 'https://amzn.to/4cOFvi5' },
+            { id: 4, name: 'Blender', description: 'High-performance blender for smoothies and more.', category: 'home', image: 'https://f.media-amazon.com/images/I/41HOLnS970L._SY300_SX300_QL70_FMwebp_.jpg', buyLink: 'https://www.amazon.in/COOKWELL-Bullet-Grinder-Blades-Silver/dp/B097XPJTL3?crid=2E3KWUB14JNZ5&dib=eyJ2IjoiMSJ9.-Eebm7z6jvBXf3C9K-rV2gO_EawZbYTVWelJE8hvmzf6LWvyuKPS85J-qvaUg4-diDaNe9Eai2i3Pnn0KYkhqVmRaGlM3SE_CXV8AcRAZZZorzcL3-pZqQ9stFYyozGBYqYhfOjMn1Ce7TQkFUYe7EEpkYV9d-5iM57hZkN7j8g9NbnmvlLrjHLojeTZVlUimd_vpg7AfyKHZGlNZMNfvAIAWr9hpF2YJjBqRzl1okc.Xp_s4T7U8AZ2KnZ3jViuHumkjblm6ByYUazC_1a3pxg&dib_tag=se&keywords=Blender&qid=1725466802&sprefix=blender%2Caps%2C211&sr=8-4&th=1&linkCode=ll1&tag=smitrajsinh21-21&linkId=d3008671d0250e2c75d94b88a65a89f1&language=en_IN&ref_=as_li_ss_tl' },
+            { id: 5, name: 'Smartwatch', description: 'Feature-packed smartwatch with fitness tracking.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/41Hr4Mn6pCL._SX300_SY300_QL70_FMwebp_.jpg', buyLink: 'https://amzn.to/4dQnOjt' }
+        ];
+
+        function displayProducts(products) {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = '';
+            products.forEach(product => {
+                const productItem = document.createElement('li');
+                productItem.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h2>${product.name}</h2>
+                    <p>${product.description}</p>
+                    <a href="${product.buyLink}" target="_blank">
+                        <button>Buy</button>
+                    </a>
+                `;
+                productList.appendChild(productItem);
+            });
+        }
+
+        function filterProducts() {
+            const selectedCategory = document.getElementById('category-select').value;
+            const filteredProducts = selectedCategory === 'all' ? products : products.filter(product => product.category === selectedCategory);
+            displayProducts(filteredProducts);
+        }
+
+        function searchProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const searchedProducts = products.filter(product => product.name.toLowerCase().includes(query));
+            displayProducts(searchedProducts);
+        }
+
+        // Initial display of all products
+        displayProducts(products);
+    </script>
+</body>
+</html>
