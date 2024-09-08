@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +17,7 @@
         #navbar {
             background-color: #333;
             color: #fff;
-            padding: 10px 20px;
+            padding: 20px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -52,6 +51,51 @@
 
         #navbar ul li a:hover {
             color: #ddd;
+        }
+
+        #hero {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            background-image: url('https://www.pngitem.com/pimgs/m/50-505076_transparent-background-professional-girl-png-png-download.png'); /* Example background image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        #hero-text {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        #hero-text h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #hero-text p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        #hero-text button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1em;
+        }
+
+        #hero-text button:hover {
+            background-color: #218838;
         }
 
         #search-bar {
@@ -192,10 +236,19 @@
         <div class="company-name">Jartims</div>
         <ul>
             <li><a href="./index.html">Home</a></li>
-            <li><a href="./about.html">About Us</a></li>
-            <li><a href="./contect.html">Contact Us</a></li>
+            <li><a href="./about.html">AboutUs</a></li>
+            <li><a href="./contect.html">ContactUs</a></li>
         </ul>
     </nav>
+
+    <!-- Hero Section with Image and Text -->
+    <section id="hero">
+        <div id="hero-text">
+            <h1>Find the Best Deals Here</h1>
+            <p>Explore a wide range of products at unbeatable prices.</p>
+            <button onclick="scrollToProducts()">Shop Now</button>
+        </div>
+    </section>
 
     <!-- Search Bar -->
     <div id="search-bar">
@@ -222,59 +275,62 @@
     <!-- Footer -->
     <footer>
         <div id="social-media">
-            <a href="https://www.facebook.com" target="_blank">Facebook</a> |
-            <a href="https://www.twitter.com" target="_blank">Twitter</a> |
-            <a href="https://www.instagram.com" target="_blank">Instagram</a> |
-            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            |<a href="https://www.facebook.com" target="_blank">Facebook</a> |
+            <a href="https://youtube.com/@success_club2030?si=RvMtsPvKBI0QDEjO" target="_blank">Youtube</a> |
+            <a href="https://www.instagram.com/_wealthy_mindset?igsh=MWg3eGU0YWN4Y2U2Zg==" target="_blank">Instagram</a> |
+            |<a href="https://t.me/amazon938" target="_blank">Telegram</a>|
         </div>
         <p>&copy; 2024 Jartims</p>
     </footer>
 
     <script>
         const products = [
-            { id: 1, name: 'Wireless Headphones', description: 'High quality wireless headphones.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/710dy4BFjLL._SX522_.jpg', buyLink: 'https://www.amazon.in/Boult-Wireless-Earbuds-Playtime-Charging/dp/B0D3R1JQ7D?psc=1&linkCode=ll1&tag=smitrajsinh21-21&linkId=a8d5782cdc104b7a693e90817f6b4333&language=en_IN&ref_=as_li_ss_tl' },
-            { id: 2, name: 'Leather Jacket', description: 'Stylish leather jacket for men.', category: 'clothing', image: 'https://f.media-amazon.com/images/I/61hz9cK6gnL._SX679_.jpg', buyLink: 'https://amzn.to/4e1qYki' },
-            { id: 3, name: 'JavaScript Book', description: 'Learn JavaScript programming with this book.', category: 'books', image: 'https://f.media-amazon.com/images/I/41pSmCOLxKL._SX342_SY445_.jpg', buyLink: 'https://amzn.to/4cOFvi5' },
-            { id: 4, name: 'Blender', description: 'High-performance blender for smoothies and more.', category: 'home', image: 'https://f.media-amazon.com/images/I/41HOLnS970L._SY300_SX300_QL70_FMwebp_.jpg', buyLink: 'https://www.amazon.in/COOKWELL-Bullet-Grinder-Blades-Silver/dp/B097XPJTL3?crid=2E3KWUB14JNZ5&dib=eyJ2IjoiMSJ9.-Eebm7z6jvBXf3C9K-rV2gO_EawZbYTVWelJE8hvmzf6LWvyuKPS85J-qvaUg4-diDaNe9Eai2i3Pnn0KYkhqVmRaGlM3SE_CXV8AcRAZZZorzcL3-pZqQ9stFYyozGBYqYhfOjMn1Ce7TQkFUYe7EEpkYV9d-5iM57hZkN7j8g9NbnmvlLrjHLojeTZVlUimd_vpg7AfyKHZGlNZMNfvAIAWr9hpF2YJjBqRzl1okc.Xp_s4T7U8AZ2KnZ3jViuHumkjblm6ByYUazC_1a3pxg&dib_tag=se&keywords=Blender&qid=1725466802&sprefix=blender%2Caps%2C211&sr=8-4&th=1&linkCode=ll1&tag=smitrajsinh21-21&linkId=d3008671d0250e2c75d94b88a65a89f1&language=en_IN&ref_=as_li_ss_tl' },
-            { id: 5, name: 'Smartwatch', description: 'Feature-packed smartwatch with fitness tracking.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/41Hr4Mn6pCL._SX300_SY300_QL70_FMwebp_.jpg', buyLink: 'https://amzn.to/4dQnOjt' },
-            { id: 6, name: 'Professional Camera Lens', description: 'High-quality camera lens for professional photography.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/81WTevTNYFL._SX522_.jpg', buyLink: 'https://amzn.to/3B2JDxJ' },
-            { id: 7, name: 'Yoga Mat', description: 'Durable and comfortable yoga mat for all levels.', category: 'home', image: 'https://f.media-amazon.com/images/I/41HNM2p3vUL._SX300_SY300_QL70_FMwebp_.jpg', buyLink: 'https://www.amazon.in/Lifelong-Material-Anti-Slip-Manufacturers-LLYM223/dp/B0BRQCVJZQ?crid=3QMVJC9NHID14&dib=eyJ2IjoiMSJ9.TT8jHQfYExv35qH1w6e3lh-Utoc0dd1NnLDMCxsSHTQs-bG8gsQOcuMtpBIGm0bzCFpl2oMb90JyQzNURi18rBES_F6AUmQyljtDcP8sjGfpVkgWihu_J-3OoJ2zxNfnyqIR3hXu4jcmnmmlaUW8S2QwljoG8GzLm3e4-YSUZfgQ-jGOL6E1i7cm3OvLDfyDEgrktPNh7ehPupQ8uylNqhYIblxmVGooNDM6WvX3fJeNnioZqg_ZBx_RERdgCBQUqjUdPNA43Bjfg2S6xR2FDwPh1cqm3mrKZAcSex-22bU.sxvqZ_SPDQYIHZwqjtf4xPEki_UVWOTpoetHZQ65to4&dib_tag=se&keywords=Yoga%2BMat&qid=1725533565&sprefix=yoga%2Bmat%2Caps%2C225&sr=8-9&th=1&linkCode=ll1&tag=smitrajsinh21-21&linkId=ef751b707cefd0db6b6e7612c915d306&language=en_IN&ref_=as_li_ss_tl' },
-            { id: 8, name: 'Noise Cancelling Headphones', description: 'Over-ear wireless headphones with active noise cancellation.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/31L3CbVkRlL._SX300_SY300_QL70_FMwebp_.jpg',buyLink: 'https://www.amazon.in/boAt-Rockerz-551ANC-Cancellation-Headphones/dp/B0BZHRB9J1?crid=KQRHXN8GML63&dib=eyJ2IjoiMSJ9.EnqdnpZSZ_4q407wyrhH0Cklkry86bxI5ccu2H1ectYim1bbugRm1uTKwIUK7gFgZT9FatMZHXJ6VA9KrcQrLqFiNkKdtwPJtY5qpSt22536TrTHKg6AHx4GgHHA9P-RSMfAsvfvSlvhDpJ_Ji9xw0_K7GpjS-MnyHfGJiP1RinG1PFEKqGWPJo5wH3xEFHCOngZeVoVm3AW3aJTSu1HyUuYgBadQWAY5LNlzATrhuU.ONNuG-TmW5CZhq7b-JB6sKi8GQQdtDP2rsHXEMOYV5M&dib_tag=se&keywords=Noise+Cancelling+Headphones&qid=1725680854&sprefix=noise+cancelling+headphones%2Caps%2C467&sr=8-3&linkCode=ll1&tag=smitrajsinh21-21&linkId=fc89ac009fbf4c845b75660f18846072&language=en_IN&ref_=as_li_ss_tl' },
-            { id: 9, name: '4K Ultra HD Smart TV', description: '55-inch 4K Ultra HD Smart TV with HDR and voice control.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/61T5drqfafL._SX679_.jpg', buyLink:'https://amzn.to/3MBTMUP'},
-            { id: 10, name: 'Gaming Laptop', description: 'High-performance gaming laptop with NVIDIA graphics and Intel i7 processor.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/81rSur88g3L._SX679_.jpg', buyLink:'https://amzn.to/3MzVDt5' }
-        ];
+        { id: 1, name: 'Wireless Headphones', description: 'High quality wireless headphones.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/710dy4BFjLL._SX522_.jpg', buyLink: 'https://www.amazon.in/Boult-Wireless-Earbuds-Playtime-Charging/dp/B0D3R1JQ7D?psc=1&linkCode=ll1&tag=smitrajsinh21-21&linkId=a8d5782cdc104b7a693e90817f6b4333&language=en_IN&ref_=as_li_ss_tl' },
+        { id: 2, name: 'Leather Jacket', description: 'Stylish leather jacket for men.', category: 'clothing', image: 'https://f.media-amazon.com/images/I/61hz9cK6gnL._SX679_.jpg', buyLink: 'https://amzn.to/4e1qYki' },
+        { id: 3, name: 'JavaScript Book', description: 'Learn JavaScript programming with this book.', category: 'books', image: 'https://f.media-amazon.com/images/I/41pSmCOLxKL._SX342_SY445_.jpg', buyLink: 'https://amzn.to/4cOFvi5' },
+        { id: 4, name: 'Blender', description: 'High-performance blender for smoothies and more.', category: 'home', image: 'https://f.media-amazon.com/images/I/41HOLnS970L._SY300_SX300_QL70_FMwebp_.jpg', buyLink: 'https://www.amazon.in/COOKWELL-Bullet-Grinder-Blades-Silver/dp/B097XPJTL3?crid=2E3KWUB14JNZ5&dib=eyJ2IjoiMSJ9.-Eebm7z6jvBXf3C9K-rV2gO_EawZbYTVWelJE8hvmzf6LWvyuKPS85J-qvaUg4-diDaNe9Eai2i3Pnn0KYkhqVmRaGlM3SE_CXV8AcRAZZZorzcL3-pZqQ9stFYyozGBYqYhfOjMn1Ce7TQkFUYe7EEpkYV9d-5iM57hZkN7j8g9NbnmvlLrjHLojeTZVlUimd_vpg7AfyKHZGlNZMNfvAIAWr9hpF2YJjBqRzl1okc.Xp_s4T7U8AZ2KnZ3jViuHumkjblm6ByYUazC_1a3pxg&dib_tag=se&keywords=Blender&qid=1725466802&sprefix=blender%2Caps%2C211&sr=8-4&th=1&linkCode=ll1&tag=smitrajsinh21-21&linkId=d3008671d0250e2c75d94b88a65a89f1&language=en_IN&ref_=as_li_ss_tl' },
+        { id: 5, name: 'Smartwatch', description: 'Feature-packed smartwatch with fitness tracking.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/41Hr4Mn6pCL._SX300_SY300_QL70_FMwebp_.jpg', buyLink: 'https://amzn.to/4dQnOjt' },
+        { id: 6, name: 'Professional Camera Lens', description: 'High-quality camera lens for professional photography.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/81WTevTNYFL._SX522_.jpg', buyLink: 'https://amzn.to/3B2JDxJ' },
+        { id: 7, name: 'Yoga Mat', description: 'Durable and comfortable yoga mat for all levels.', category: 'home', image: 'https://f.media-amazon.com/images/I/41HNM2p3vUL._SX300_SY300_QL70_FMwebp_.jpg', buyLink: 'https://www.amazon.in/Lifelong-Material-Anti-Slip-Manufacturers-LLYM223/dp/B0BRQCVJZQ?crid=3QMVJC9NHID14&dib=eyJ2IjoiMSJ9.TT8jHQfYExv35qH1w6e3lh-Utoc0dd1NnLDMCxsSHTQs-bG8gsQOcuMtpBIGm0bzCFpl2oMb90JyQzNURi18rBES_F6AUmQyljtDcP8sjGfpVkgWihu_J-3OoJ2zxNfnyqIR3hXu4jcmnmmlaUW8S2QwljoG8GzLm3e4-YSUZfgQ-jGOL6E1i7cm3OvLDfyDEgrktPNh7ehPupQ8uylNqhYIblxmVGooNDM6WvX3fJeNnioZqg_ZBx_RERdgCBQUqjUdPNA43Bjfg2S6xR2FDwPh1cqm3mrKZAcSex-22bU.sxvqZ_SPDQYIHZwqjtf4xPEki_UVWOTpoetHZQ65to4&dib_tag=se&keywords=Yoga%2BMat&qid=1725533565&sprefix=yoga%2Bmat%2Caps%2C225&sr=8-9&th=1&linkCode=ll1&tag=smitrajsinh21-21&linkId=ef751b707cefd0db6b6e7612c915d306&language=en_IN&ref_=as_li_ss_tl' },
+        { id: 8, name: 'Noise Cancelling Headphones', description: 'Over-ear wireless headphones with active noise cancellation.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/31L3CbVkRlL._SX300_SY300_QL70_FMwebp_.jpg',buyLink: 'https://www.amazon.in/boAt-Rockerz-551ANC-Cancellation-Headphones/dp/B0BZHRB9J1?crid=KQRHXN8GML63&dib=eyJ2IjoiMSJ9.EnqdnpZSZ_4q407wyrhH0Cklkry86bxI5ccu2H1ectYim1bbugRm1uTKwIUK7gFgZT9FatMZHXJ6VA9KrcQrLqFiNkKdtwPJtY5qpSt22536TrTHKg6AHx4GgHHA9P-RSMfAsvfvSlvhDpJ_Ji9xw0_K7GpjS-MnyHfGJiP1RinG1PFEKqGWPJo5wH3xEFHCOngZeVoVm3AW3aJTSu1HyUuYgBadQWAY5LNlzATrhuU.ONNuG-TmW5CZhq7b-JB6sKi8GQQdtDP2rsHXEMOYV5M&dib_tag=se&keywords=Noise+Cancelling+Headphones&qid=1725680854&sprefix=noise+cancelling+headphones%2Caps%2C467&sr=8-3&linkCode=ll1&tag=smitrajsinh21-21&linkId=fc89ac009fbf4c845b75660f18846072&language=en_IN&ref_=as_li_ss_tl' },
+        { id: 9, name: '4K Ultra HD Smart TV', description: '55-inch 4K Ultra HD Smart TV with HDR and voice control.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/61T5drqfafL._SX679_.jpg', buyLink:'https://amzn.to/3MBTMUP'},
+        { id: 10, name: 'Gaming Laptop', description: 'High-performance gaming laptop with NVIDIA graphics and Intel i7 processor.', category: 'electronics', image: 'https://f.media-amazon.com/images/I/81rSur88g3L._SX679_.jpg', buyLink:'https://amzn.to/3MzVDt5' }
+      ];
+
+        function scrollToProducts() {
+            document.getElementById('product-list').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function searchProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query));
+            displayProducts(filteredProducts);
+        }
+
+        function filterProducts() {
+            const category = document.getElementById('category-select').value;
+            const filteredProducts = category === 'all' ? products : products.filter(product => product.category === category);
+            displayProducts(filteredProducts);
+        }
 
         function displayProducts(products) {
             const productList = document.getElementById('product-list');
             productList.innerHTML = '';
             products.forEach(product => {
-                const productItem = document.createElement('li');
-                productItem.innerHTML = `
+                const li = document.createElement('li');
+                li.innerHTML = `
                     <img src="${product.image}" alt="${product.name}">
                     <h2>${product.name}</h2>
                     <p>${product.description}</p>
-                    <a href="${product.buyLink}" target="_blank">
-                        <button>Buy</button>
-                    </a>
+                    <a href="${product.buyLink}" target="_blank"><button>Buy Now</button></a>
                 `;
-                productList.appendChild(productItem);
+                productList.appendChild(li);
             });
         }
 
-        function filterProducts() {
-            const selectedCategory = document.getElementById('category-select').value;
-            const filteredProducts = selectedCategory === 'all' ? products : products.filter(product => product.category === selectedCategory);
-            displayProducts(filteredProducts);
-        }
-
-        function searchProducts() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            const searchedProducts = products.filter(product => product.name.toLowerCase().includes(query));
-            displayProducts(searchedProducts);
-        }
-
-        // Initial display of all products
+        // Display all products by default
         displayProducts(products);
     </script>
+
 </body>
 </html>
